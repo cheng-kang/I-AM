@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,19 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-Bm-e7t">
-                                <frame key="frameInset" minX="16" minY="218" width="343" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="Jvl-1a-5DP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="100"/>
-                                <state key="normal" title="I AM">
-                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="GoZ-F9-gip" kind="show" id="pcX-Mf-TXS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLQ-ES-VWa">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MEU-mg-axE"/>
@@ -44,13 +32,25 @@
                                     <segue destination="Hxx-eU-c1j" kind="show" id="0os-v4-V7a"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-Bm-e7t">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Jvl-1a-5DP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="100"/>
+                                <state key="normal" title="I AM">
+                                    <color key="titleColor" red="0.23137254900000001" green="0.4039215686" blue="0.69411764710000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GoZ-F9-gip" kind="show" id="pcX-Mf-TXS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rLQ-ES-VWa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6IG-Fd-FNa"/>
                             <constraint firstItem="3hS-Bm-e7t" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cgu-Zc-Rwh"/>
                             <constraint firstItem="rLQ-ES-VWa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="epx-vF-S74"/>
-                            <constraint firstItem="3hS-Bm-e7t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvh-S5-BYp"/>
+                            <constraint firstItem="3hS-Bm-e7t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.764" id="vvh-S5-BYp"/>
                             <constraint firstItem="3hS-Bm-e7t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x0u-hJ-kAz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rLQ-ES-VWa" secondAttribute="bottom" constant="8" id="y3N-MK-KY6"/>
                         </constraints>
@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="799"/>
         </scene>
-        <!--View Controller-->
+        <!--Record Emotions View Controller-->
         <scene sceneID="doQ-lr-xHJ">
             <objects>
-                <viewController id="GoZ-F9-gip" sceneMemberID="viewController">
+                <viewController id="GoZ-F9-gip" customClass="RecordEmotionsViewController" customModule="I_AM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yq5-EO-DBV"/>
                         <viewControllerLayoutGuide type="bottom" id="GYZ-ck-FXX"/>
@@ -91,23 +91,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadness" translatesAutoresizingMaskIntoConstraints="NO" id="wLy-Pi-Zxb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-51-A2V">
+                                <frame key="frameInset" width="375" height="609"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-wF-nS3">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="VQV-BH-h5Y"/>
-                                    <constraint firstAttribute="height" constant="250" id="vPT-7p-vrC"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZA0-tI-GDA"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wLy-Pi-Zxb" firstAttribute="centerY" secondItem="4yZ-FF-GoR" secondAttribute="centerY" id="THr-kh-rIY"/>
-                            <constraint firstItem="wLy-Pi-Zxb" firstAttribute="centerX" secondItem="4yZ-FF-GoR" secondAttribute="centerX" id="cn9-cN-zXe"/>
+                            <constraint firstAttribute="trailing" secondItem="BUn-51-A2V" secondAttribute="trailing" id="0eD-ur-rL1"/>
+                            <constraint firstAttribute="trailing" secondItem="Gwd-wF-nS3" secondAttribute="trailing" id="LQX-sa-3rJ"/>
+                            <constraint firstItem="Gwd-wF-nS3" firstAttribute="leading" secondItem="4yZ-FF-GoR" secondAttribute="leading" id="Twr-Sc-gqX"/>
+                            <constraint firstItem="Gwd-wF-nS3" firstAttribute="top" secondItem="BUn-51-A2V" secondAttribute="bottom" id="kKH-Uv-g0n"/>
+                            <constraint firstItem="GYZ-ck-FXX" firstAttribute="top" secondItem="Gwd-wF-nS3" secondAttribute="bottom" id="mNT-o6-jP7"/>
+                            <constraint firstItem="BUn-51-A2V" firstAttribute="top" secondItem="4yZ-FF-GoR" secondAttribute="top" id="vnF-8d-Rft"/>
+                            <constraint firstItem="BUn-51-A2V" firstAttribute="leading" secondItem="4yZ-FF-GoR" secondAttribute="leading" id="x2A-TN-qdB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollview" destination="BUn-51-A2V" id="qJu-Vu-uK2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMr-Ut-vij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="139"/>
+            <point key="canvasLocation" x="1720.8" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jzg-x6-K6q">
@@ -128,7 +139,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sadness" width="240" height="240"/>
-    </resources>
 </document>

@@ -13,6 +13,8 @@
 		ED4D42B81DCBAC6100488B2C /* I_AM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED4D42B61DCBAC6100488B2C /* I_AM.xcdatamodeld */; };
 		ED4D42BA1DCBAC6100488B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED4D42B91DCBAC6100488B2C /* Assets.xcassets */; };
 		ED4D42BD1DCBAC6100488B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4D42BB1DCBAC6100488B2C /* LaunchScreen.storyboard */; };
+		ED9F08261DCF96E1004E25A3 /* RecordEmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F08251DCF96E1004E25A3 /* RecordEmotionsViewController.swift */; };
+		ED9F08281DCF974A004E25A3 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F08271DCF974A004E25A3 /* EmotionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ED4D42B91DCBAC6100488B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED4D42BC1DCBAC6100488B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED4D42BE1DCBAC6100488B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED9F08251DCF96E1004E25A3 /* RecordEmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordEmotionsViewController.swift; sourceTree = "<group>"; };
+		ED9F08271DCF974A004E25A3 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				ED4D42BB1DCBAC6100488B2C /* LaunchScreen.storyboard */,
 				ED4D42BE1DCBAC6100488B2C /* Info.plist */,
 				ED4D42B61DCBAC6100488B2C /* I_AM.xcdatamodeld */,
+				ED9F08251DCF96E1004E25A3 /* RecordEmotionsViewController.swift */,
+				ED9F08271DCF974A004E25A3 /* EmotionView.swift */,
 			);
 			path = "I AM";
 			sourceTree = "<group>";
@@ -140,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9F08281DCF974A004E25A3 /* EmotionView.swift in Sources */,
 				ED4D42B21DCBAC6100488B2C /* ViewController.swift in Sources */,
+				ED9F08261DCF96E1004E25A3 /* RecordEmotionsViewController.swift in Sources */,
 				ED4D42B81DCBAC6100488B2C /* I_AM.xcdatamodeld in Sources */,
 				ED4D42B01DCBAC6100488B2C /* AppDelegate.swift in Sources */,
 			);
@@ -306,6 +314,7 @@
 				ED4D42C31DCBAC6100488B2C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
